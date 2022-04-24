@@ -1,38 +1,40 @@
 import React, {Component} from 'react';
+import $ from 'jquery';
+import 'owl.carousel';
+import OwlCarousel from 'react-owl-carousel';
+
+/*------------------
+       OwlCarousel options
+       --------------------*/
 
 class Spotlight extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { error: null, errorInfo: null };
-    }
-
-    componentDidCatch(error, errorInfo) {
-        // Catch errors in any components below and re-render with error message
-        this.setState({
-            error: error,
-            errorInfo: errorInfo
+    componentDidMount() {
+        $('.set-bg').each(function() {
+            const bg = $(this).data('setbg');
+            $(this).css('background-image', 'url(' + bg + ')');
         })
-        // You can also log error messages to an error reporting service here
     }
     render() {
-        if (this.state.errorInfo) {
-            // Error path
-            return (
-                <div>
-                    <h2>Something went wrong.</h2>
-                    <details style={{ whiteSpace: 'pre-wrap' }}>
-                        {this.state.error && this.state.error.toString()}
-                        <br />
-                        {this.state.errorInfo.componentStack}
-                    </details>
-                </div>
-            );
-        }
+        const owlOptions = {
+            loop: true,
+            margin: 0,
+            items: 1,
+            dots: true,
+            nav: true,
+            navText: ["<span class='arrow_carrot-left'></span>", "<span class='arrow_carrot-right'></span>"],
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn',
+            smartSpeed: 1200,
+            autoWidth: false,
+            autoplay: true,
+            mouseDrag: false
+        };
         return (
             <section className="hero">
                 <div className="container">
-                    <div className="hero__slider owl-carousel">
-                        <div className="hero__items set-bg" data-setbg={process.env.PUBLIC_URL + "/anime_main/img/hero/hero-1.jpg"}>
+                    {/*<div className="hero__slider owl-carousel">*/}
+                    <OwlCarousel className="hero__slider owl-carousel" {...owlOptions}>
+                        <div className="hero__items set-bg" data-setbg="anime_main/img/hero/hero-1.jpg">
                             <div className="row">
                                 <div className="col-lg-6">
                                     <div className="hero__text">
@@ -44,7 +46,7 @@ class Spotlight extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="hero__items set-bg" data-setbg={process.env.PUBLIC_URL + "/anime_main/img/hero/hero-1.jpg"}>
+                        <div className="hero__items set-bg" data-setbg="anime_main/img/hero/hero-1.jpg">
                             <div className="row">
                                 <div className="col-lg-6">
                                     <div className="hero__text">
@@ -56,7 +58,7 @@ class Spotlight extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="hero__items set-bg" data-setbg={process.env.PUBLIC_URL + "/anime_main/img/hero/hero-1.jpg"}>
+                        <div className="hero__items set-bg" data-setbg="anime_main/img/hero/hero-1.jpg">
                             <div className="row">
                                 <div className="col-lg-6">
                                     <div className="hero__text">
@@ -68,7 +70,7 @@ class Spotlight extends Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </OwlCarousel>
                 </div>
             </section>
         );

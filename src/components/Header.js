@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import Layout from "../view/Layout/Layout";
-import Movies from "../view/Movies/Movies";
 
 class Header extends Component {
     constructor(props) {
@@ -37,9 +35,9 @@ class Header extends Component {
                     <div className="row">
                         <div className="col-lg-2">
                             <div className="header__logo">
-                                <a href="./index.html">
-                                    <img src="img/logo.png" alt="" />
-                                </a>
+                                <Link to="/">
+                                    <img src="anime_main/img/logo.png" alt="" />
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-8">
@@ -48,7 +46,7 @@ class Header extends Component {
                                     <ul>
                                         <li className="active"><a href="./index.html">Homepage</a></li>
                                         <li><a href="#">News</a></li>
-                                        <li><a href="./categories.html">Movies <span className="arrow_carrot-down" /></a>
+                                        <li><Link to="/movies">Movies <span className="arrow_carrot-down" /></Link>
                                             <ul className="dropdown">
                                                 <li><a href="./categories.html">Cinema</a></li>
                                                 <li><a href="./anime-details.html">Anime</a></li>
@@ -56,8 +54,8 @@ class Header extends Component {
                                                 <li><a href="./blog-details.html">Document</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="./blog.html">Video Games</a></li>
-                                        <li><a href="#">Book</a></li>
+                                        <li><Link to="/games">Video Games</Link></li>
+                                        <li><Link to="/book">Books</Link></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -70,6 +68,15 @@ class Header extends Component {
                         </div>
                     </div>
                     <div id="mobile-menu-wrap" />
+                </div>
+                {/* Search model Begin */}
+                <div className="search-model">
+                    <div className="h-100 d-flex align-items-center justify-content-center">
+                        <div className="search-close-switch"><i className="icon_close" /></div>
+                        <form className="search-model-form">
+                            <input type="text" id="search-input" placeholder="Search here....." />
+                        </form>
+                    </div>
                 </div>
             </header>
         );
