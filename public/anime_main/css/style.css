@@ -433,6 +433,67 @@ ol {
 	margin-right: 0;
 }
 
+.header__right .user {
+	display: inline-block;
+	font-size: 18px;
+	color: #ffffff;
+	/*margin-right: 30px;*/
+	list-style: none;
+	position: relative;
+	margin-right: 16px;
+}
+
+.header__right .user .dropbtn {
+	list-style: none;
+	display: inline-block;
+	position: relative;
+	margin-right: 16px;
+	font-size: 16px;
+	color: #b7b7b7;
+	font-weight: 500;
+}
+
+.header__right .user .dropdown {
+	position: absolute;
+	left: 0;
+	top: 42px;
+	width: 150px;
+	background: #ffffff;
+	text-align: left;
+	padding: 5px 0;
+	z-index: 9;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+	color: #111111;
+}
+
+.header__right .user:hover .dropdown {
+	top: 42px;
+	opacity: 1;
+	color: #111111;
+	visibility: visible;
+}
+
+.header__right .user .dropdown li {
+	color: #111111;
+	display: block;
+	margin-right: 0;
+}
+
+.header__right .user .dropdown li a {
+	font-size: 14px;
+	color: #111111;
+	font-weight: 500;
+	padding: 5px 20px;
+}
+
+.header__right .user:hover .dropdown li a {
+	background: transparent;
+}
+
 .slicknav_menu {
 	display: none;
 }

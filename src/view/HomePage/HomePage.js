@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import './HomePage.css';
-import Layout from "../../components/Layout";
 
 class Home extends Component {
     render() {

@@ -13,8 +13,8 @@
         Preloader
     --------------------*/
 
-    $(document).on('load', window, function(){
-    // $(window).on('load', function () {
+    // $(document).ready(function() {
+    $(window).on('load', function () {
         $(".loader").fadeOut();
         $("#preloder").delay(200).fadeOut("slow");
 

@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import { Link } from "react-router-dom"
 import { Navbar, Container, Nav } from "react-bootstrap"
-import MoviesApi, {endpoints} from "../../api/MoviesApi";
+import MoviesApi, {endpoints} from "../../configs/Apis";
 
-export default function Movies() {
+export default function MovieDetail() {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
